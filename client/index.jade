@@ -1,11 +1,111 @@
-doctype html
-html
-  head
-    meta(charset='utf-8')      
-    title Apollo
-    link(rel='stylesheet', href='/vendor/font-awesome/css/font-awesome.min.css')
-    link(rel='stylesheet', href=isProd ? '/index.min.css' : '/index.css')
-    link(rel='shortcut icon', href='/favicon.ico')
+doctype html(lang='en')
+head
+    meta(charset='utf-8')
+    meta(http-equiv='X-UA-Compatible', content='IE=edge')
+    meta(name='viewport', content='width=device-width, initial-scale=1 user-scalable=no')
+    meta(name='p:domain_verify', content='4efb09ea5c32cfbd18c5dae7c6396094')
+    title Jon Edwards - Full Stack Web Developer
+    // Bootstrap
+    link(href='http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css', rel='stylesheet')
+    link(rel='stylesheet', href='http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css')
+    link(href='index.css', rel='stylesheet')
+    link(href='css/social-buttons.css', rel='stylesheet')
+    // HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries
+    // WARNING: Respond.js doesn't work if you view the page via file://
+    //if lt IE 9
+       [if lt IE 9]
+    script(src='https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js')
+    script(src='https://oss.maxcdn.com/respond/1.4.2/respond.min.js')
+    // [endif]
   body
-    h1 my super portfolio
-    h2 this is a modification
+    nav.navbar.navbar-default
+      .container-fluid
+        .navbar-header
+          button.navbar-toggle.collapsed(type='button', data-toggle='collapse', data-target='#bs-example-navbar-collapse-1')
+            span.sr-only Toggle navigation
+            span.icon-bar
+            span.icon-bar
+            span.icon-bar
+          a.navbar-brand(href='#') Jon Edwards
+        // Collect the nav links, forms, and other content for toggling
+        #bs-example-navbar-collapse-1.collapse.navbar-collapse
+          ul.nav.navbar-nav
+            li(role='presentation')
+              a(href='#')
+                i.fa.fa-home.fa-lg
+            li(role='presentation')
+              a(href='http://www.kolohelios.me') Blog
+            li.dropdown(role='presentation') 
+              a.dropdown-toggle(href='#', data-toggle='dropdown', role='button', aria-expanded='false') Projects
+                span.caret
+              ul.dropdown-menu(role='menu')
+                li Professional Projects
+                li
+                  a(href='#') Project X
+                li
+                  a(href='#') Project Y
+                li.divider
+                li Personal Projects
+                li
+                  a(href='hangman.html') Hangman
+            li.dropdown(role='presentation')
+              a.dropdown-toggle(href='#', data-toggle='dropdown', role='button', aria-expanded='false') Contact
+                span.caret
+              ul.dropdown-menu(role='menu')
+                li(role='presentation')
+                  a(href='mailto:jkedwards@me.com')
+                    i.fa.fa-envelope.fa-lg: a(href="mailto:jkedwards@me.com") jkedwards@me.com
+                li.divider
+                li(role='presentation')
+                  a(href='http://twitter.com/kolohelios')
+                    i.fa.fa-twitter.fa-lg Twitter
+                li(role='presentation')
+                  a(href='https://github.com/kolohelios')
+                    i.fa.fa-github.fa-lg Github
+                li(role='presentation')
+                  a(href='http://www.linkedin.com/in/kolohelios')
+                    i.fa.fa-linkedin.fa-lg LinkedIn
+                li(role='presentation')
+                  a(href='http://www.facebook.com/kolohelios')
+                    i.fa.fa-facebook.fa-lg Facebook
+                li(role='presentation')
+                  a(href='http://www.stackoverflow.com/users/4592962/jon-edwards')
+                    i.fa.fa-stack-overflow.fa-lg Stack Overflow
+                li(role='presentation')
+                  a(href='https://angel.co/jon-edwards-1')
+                    i.fa.fa-angellist.fa-lg Angel List
+                li(role='presentation')
+                  a(href='https://www.quora.com/Jon-Edwards-10') Quora
+        // /.navbar-collapse
+      // /.container-fluid
+    // this is the area to add text
+    .jumbotron
+      p.lead Jon Edwards is a junior web developer with experience in the MEAN stack.
+        .row
+          .col-md-3
+            img.img-responsive.img-circle(src='assets/photo.jpg', alt='photo of Jon Edwards')
+          .col-md-9
+            h4 I have experience with the following frameworks:
+            ul.fa-ul
+              i.fa.fa-check-square &nbsp;Mongo.db
+              i.fa.fa-check-square &nbsp;Express
+              i.fa.fa-check-square &nbsp;Angular.js
+              i.fa.fa-check-square &nbsp;Node.js
+              i.fa.fa-check-square &nbsp;Bootstrap
+            h4 and languages:
+            ul.fa-ul
+              i.fa.fa-check-square &nbsp;JavaScript
+    // footer begins here
+    nav.navbar.navbar-default.navbar-fixed-bottom
+      .container-fluid
+        p.navbar-text &quot;... the only way to do great work is to love what you do.&quot; -Steve Jobs
+        ul#themes.nav.nav-pills.navbar-right
+          li.active(role='presentation')
+            a#light(href='#') Light Theme
+          li(role='presentation')
+            a#dark(href='#') Dark Theme
+    // jQuery (necessary for Bootstrap's JavaScript plugins)
+    script(src='https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js')
+    // Include all compiled plugins (below), or include individual files as needed
+    script(src='http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js')
+    script(src='toggle-themes.js')

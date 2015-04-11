@@ -1,4 +1,6 @@
 // jQuery to toggle the themes on the site from "Dark" to "Light"
+'use strict';
+
 $(document).ready(function() {
     $("#themes").on("click", "#dark", function(event) {
         event.preventDefault();
@@ -14,4 +16,4 @@ $(document).ready(function() {
         $("#light").closest("li").addClass("active");
         $("#dark").closest("li").removeClass("active");
     });
-}); 
+});

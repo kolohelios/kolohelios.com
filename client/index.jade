@@ -7,8 +7,8 @@ head
     title Jon Edwards - Full Stack Web Developer
     // Bootstrap
     link(href='vendor/bootstrap/dist/css/bootstrap.min.css', rel='stylesheet')
-    link(rel='stylesheet', href='vendor/font-awesome/css/font-awesome.min.css')
-    link(href='index.css', rel='stylesheet')
+    link(href='vendor/font-awesome/css/font-awesome.min.css' rel='stylesheet', )
+    link(rel='stylesheet', href=isProd ? '/index.min.css' : '/index.css')
     link(href='css/social-buttons.css', rel='stylesheet')
     // HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries
     // WARNING: Respond.js doesn't work if you view the page via file://
@@ -86,15 +86,15 @@ head
             img.img-responsive.img-circle(src='assets/photo.jpg', alt='photo of Jon Edwards')
           .col-md-9
             h4 I have experience with the following frameworks:
-            ul.fa-ul
-              i.fa.fa-check-square &nbsp;Mongo.db
-              i.fa.fa-check-square &nbsp;Express
-              i.fa.fa-check-square &nbsp;Angular.js
-              i.fa.fa-check-square &nbsp;Node.js
-              i.fa.fa-check-square &nbsp;Bootstrap
+            ul
+              li.fa.fa-check-square.li &nbsp;Mongo.db
+              li.fa.fa-check-square.li &nbsp;Express
+              li.fa.fa-check-square &nbsp;Angular.js
+              li.fa.fa-check-square &nbsp;Node.js
+              li.fa.fa-check-square &nbsp;Bootstrap
             h4 and languages:
-            ul.fa-ul
-              i.fa.fa-check-square &nbsp;JavaScript
+            ul
+              li.fa.fa-check-square &nbsp;JavaScript
     // footer begins here
     nav.navbar.navbar-default.navbar-fixed-bottom
       .container-fluid

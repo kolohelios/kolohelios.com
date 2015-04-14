@@ -9,7 +9,6 @@ head
     link(href='vendor/bootstrap/dist/css/bootstrap.min.css', rel='stylesheet')
     link(href='vendor/font-awesome/css/font-awesome.min.css' rel='stylesheet', )
     link(rel='stylesheet', href=isProd ? '/index.min.css' : '/index.css')
-    link(href='css/social-buttons.css', rel='stylesheet')
     // HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries
     // WARNING: Respond.js doesn't work if you view the page via file://
     //if lt IE 9
@@ -35,7 +34,7 @@ head
                 i.fa.fa-home.fa-lg
             li(role='presentation')
               a(href='http://www.kolohelios.me') Blog
-            li.dropdown(role='presentation') 
+            li.dropdown(role='presentation')
               a.dropdown-toggle(href='#', data-toggle='dropdown', role='button', aria-expanded='false') Projects
                 span.caret
               ul.dropdown-menu(role='menu')
@@ -46,8 +45,8 @@ head
                   a(href='#') Project Y
                 li.divider
                 li Personal Projects
-                li
-                  a(href='hangman.html') Hangman
+                li: a(href='hangman.html') Hangman
+                li: a(href='http://hanoi.kolohelios.com/') Towers of Hanoi
             li.dropdown(role='presentation')
               a.dropdown-toggle(href='#', data-toggle='dropdown', role='button', aria-expanded='false') Contact
                 span.caret
@@ -82,13 +81,13 @@ head
     .jumbotron
       p.lead Jon Edwards is a junior web developer with experience in the MEAN stack.
         .row
-          .col-md-3
-            img.img-responsive.img-circle(src='assets/photo.jpg', alt='photo of Jon Edwards')
-          .col-md-9
+          .col-xs-12.col-sm-3
+            img.img-responsive.img-circle#photo(src='assets/photo.jpg', alt='photo of Jon Edwards')
+          .col-xs-12.col-sm-9
             h4 I have experience with the following frameworks:
             ul
-              li.fa.fa-check-square.li &nbsp;Mongo.db
-              li.fa.fa-check-square.li &nbsp;Express
+              li.fa.fa-check-squaregulp &nbsp;Mongo.db
+              li.fa.fa-check-square &nbsp;Express
               li.fa.fa-check-square &nbsp;Angular.js
               li.fa.fa-check-square &nbsp;Node.js
               li.fa.fa-check-square &nbsp;Bootstrap
@@ -99,7 +98,7 @@ head
     nav.navbar.navbar-default.navbar-fixed-bottom
       .container-fluid
         p.navbar-text &quot;... the only way to do great work is to love what you do.&quot; -Steve Jobs
-        ul#themes.nav.nav-pills.navbar-right
+        ul.themes.nav.nav-pills.navbar-right
           li.active(role='presentation')
             a#light(href='#') Light Theme
           li(role='presentation')

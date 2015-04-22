@@ -18,7 +18,7 @@ html(lang='en', ng-app='portfolio')
     script(src='https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js')
     script(src='https://oss.maxcdn.com/respond/1.4.2/respond.min.js')
     // [endif]
-  body(ng-controller='projectView')
+  body
     nav.navbar.navbar-default
       .container-fluid
         .navbar-header
@@ -78,7 +78,7 @@ html(lang='en', ng-app='portfolio')
       p.lead.center Jon Edwards is a junior web developer with experience in the MEAN stack.
         .row
           .col-xs-12.col-sm-3
-            img.img-responsive#photo(src='assets/photo.png', alt='photo of Jon Edwards')
+            img.img-responsive#photo(src='/assets/photo.png', alt='photo of Jon Edwards')
           .col-xs-12.col-sm-9.center
             h4 I have experience with the following frameworks:
             ul#list
@@ -93,13 +93,28 @@ html(lang='en', ng-app='portfolio')
               li.fa.fa-check-square &nbsp;JavaScript
         .row
           .col-xs-12
-            h3.center Projects
-        .row.center
-          .col-xs-12.col-sm-4#projects(ng-repeat='project in projects')
+            h3.center#projectheading Projects
+        .row.center(ng-controller='projectList')
+          .col-xs-12.col-sm-4#projectlist(ng-repeat='project in projects track by $index')
             h4.project-head {{project.name}}
-            img(ng-src='{{project.screenshot-thumb}}')
+            img(ng-src='{{project.screenshotthumb}}')
             p.desc {{project.desc}}
-            button(ng-click='caseStudy()') Case Study
+            button.btmbutton(ng-click='caseStudy($index)') Case Study
+        .row#projectview(ng-controller='projectView', ng-show='showProjectView')
+          .col-xs-12.center
+            h3 {{projects[view].name}}
+            h4 Case Study
+          .col-xs-6.center
+            img(ng-src='{{projects[view].screenshot}}')
+          .col-xs-6.center
+            p {{projects[view].extddesc}}
+            p Frameworks:
+            ul
+              li(ng-repeat='tech in projects[view].techs') {{tech}}
+            p Role: {{projects[view].role}}
+            a(ng-href='{{projects[view].linktoapp}}') {{projects[view].linktext}}
+            
+            
     // footer begins here
     nav.navbar.navbar-default.navbar-fixed-bottom
         p.navbar-text &quot;... the only way to do great work is to love what you do.&quot; -Steve Jobs
@@ -109,3 +124,11 @@ html(lang='en', ng-app='portfolio')
     // Include all compiled plugins (below), or include individual files as needed
     script(src='/vendor/bootstrap/dist/js/bootstrap.min.js')
     script(src=isProd ? '/index.min.js' : '/index.js')
+    script.
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+      ga('create', 'UA-62142638-1', 'auto');
+      ga('send', 'pageview');
